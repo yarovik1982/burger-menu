@@ -1,0 +1,159 @@
+html body{
+	height: 100%;
+	font-family: sans-serif;
+}
+.wrapper {}
+
+.container {
+	max-width: 1180px;
+	margin: 0 auto;
+	padding:0 10px;
+}
+
+.header {
+	position: fixed;	
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 30;
+}
+.header:before{
+	content: "";
+	position: absolute;
+	width: 100%;
+	top: 0;
+	left: 0;
+	height: 100%;
+	background: #5e5373;
+	z-index: 2;
+}
+
+.header__body {
+	display: flex;
+	justify-content: space-between;
+	position: relative;
+	height: 80px;
+	align-items: center;
+}
+.header__logo  {
+	flex: 0 0 70px;
+	border-radius: 50%;
+	overflow: hidden;
+	position: relative;
+	z-index: 3;
+	/*width: 70px;
+	height: 70px;*/
+	/*clip-path: circle(50% at 50% 50%);*/
+}
+.header__logo img{
+	max-width: 100%;
+	object-fit: cover;
+
+}
+.header__burger {
+	display: none;
+}
+.header__menu {}
+.header__list {
+	display: flex;
+	position: relative;
+	z-index: 2;
+}
+.header__list li{
+	margin:0 0 0 20px;
+}
+.header__link {
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 18px;
+}
+.content {}
+.content__text {
+	padding: 100px 0 0 0;
+}
+@media (max-width: 767px){
+	body.lock{
+		overflow: hidden;
+	}
+	.header__body{
+		height: 50px;
+	}
+	.header__logo{
+		flex: 0 0 40px;
+	}
+	.header__burger{
+		display: block;
+		position: relative;
+		width: 30px;
+		height: 20px;
+		position: relative;
+		z-index: 3;
+	}
+	.header__burger span{
+		position: absolute;
+		background-color:  #fff;
+		position: absolute;
+		left: 0;
+		top: 9px;
+		width: 100%;
+		height: 2px;
+		transition: all 0.4s ease 0s;
+	}
+
+.header__burger:before,.header__burger:after{
+	content: "";
+	background-color: #fff;
+	position: relative;
+	width: 100%;
+	height: 2px;
+	left: 0;
+	bottom: 0;
+	display:block;
+	transition: all 0.4s ease 0s;
+	}
+	.header__burger:before{
+		top: 0;
+	}
+	.header__burger:after{
+		top: 17px;
+	}
+	.header__burger.active:before{
+		transform: rotate(45deg);
+		top: 10px;
+	}
+	.header__burger.active:after{
+		transform: rotate(-45deg);
+		top: 9px;
+	}
+	.header__burger.active span{
+		transform:scale(0);
+	}
+	.header__menu {
+		overflow: auto;
+		position: fixed;
+		top: -100%;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: #18b5a4;
+		padding: 70px 10px 20px 10px;
+		transition: all 0.4s ease 0s;
+	}
+	.header__menu.active{
+		top: 0;
+	}
+	.header__list{
+		display: block;
+	}
+	.header__list li{
+		margin: 0 0 20px 0;
+	}
+	.content__text{
+		padding: 70px 0 0 0;
+	}
+	.header__link{
+		font-size: 24px;
+	}
+}
+	
+
